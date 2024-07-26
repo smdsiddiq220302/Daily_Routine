@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <title>Object Constructor</title>
+    </head>
+    <body>
+        <h1>Object Constructor</h1>
+        <p id="demo"></p>
+
+        <p>Now we can use <span style="color: red;">new Person()</span> to create many new Person objects:</p>
+        <p id="demo_1"></p>
+        <p id="demo_2"></p>
+        <p id="demo_3"></p>
+        <p id="demo_4"></p>
+
+        <script>
+            function Person(first, last, age, eye) {
+                this.firstName = first;
+                this.lastName = last;
+                this.age = age;
+                this.eyeColor = eye;
+            }
+
+            const myFriend = new Person("Tom", "Holland", 24, "Brown");
+
+            document.getElementById("demo").innerHTML = "My friend is " + myFriend.age +".";
+
+            const myFather = new Person("John", "Doe", 50, "blue");
+            document.getElementById("demo_1").innerHTML = "My Father is " + myFather.age +".";
+
+            const myMother = new Person("Sally", "Rally", 48, "green");
+            document.getElementById("demo_2").innerHTML = "My Mother is " + myMother.age +".";
+
+            const mySister = new Person("Anna", "Rally", 18, "green");
+            document.getElementById("demo_3").innerHTML = "My Sister is " + mySister.age +".";
+
+            const mySelf = new Person("Johnny", "Rally", 22, "green");
+            document.getElementById("demo_4").innerHTML = "I am " + mySelf.age +" old.";
+
+        </script>
+
+        <b>The JavaScript prototypes allows to add properties to object constructor</b>
+
+        <p id="demo_5"></p>
+
+        <script>
+
+            Person.prototype.nationality = "English";
+
+            document.getElementById("demo_5").innerHTML = "My Friend is " + myFriend.nationality + ".";
+        </script>
+    </body>
+</html>
