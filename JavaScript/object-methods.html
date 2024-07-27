@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>JavaScrit Object Methods</title>
+    </head>
+    <body>
+        <h1>JavaScript Object Methods</h1>
+        <p style="color: red;">Object.assign()</p>
+        <p id="assign"></p>
+        <script>
+            const person1 = {
+                firstName: "john",
+                lastName: "Doe",
+                age: 50,
+                eyeColor: "Brown",
+            };
+
+            const person2 = {firstName:"Tom", lastName:"Holland"};
+
+            Object.assign(person1, person2);
+
+            let text = Object.entries(person1);
+
+            document.getElementById("assign").innerHTML = text;
+        </script>
+
+        <p style="color: red;">Object.entries()</p>
+        <p>Returns an array of the key/value pairs in an object</p>
+        <p id="entries"></p>
+
+        <script>
+            x = Object.entries(person2);
+            document.getElementById("entries").innerHTML = x; 
+        </script>
+        
+        <p style="color: red;">Object.fromEntries()</p>
+        <p>This method creates an object from alist of key/value pairs</p>
+        <p id="from"></p>
+        <script>
+            const fruits = [
+                ["apples", 300],
+                ["pears", 900],
+                ["bananas", 500],
+            ]
+
+            const myObj = Object.fromEntries(fruits);
+
+            document.getElementById("from").innerHTML = myObj;
+        </script>
+    </body>
+</html>
