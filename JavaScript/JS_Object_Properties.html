@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>JS Object Property</title>
+    </head>
+
+    <body>
+        <p>The <b>Object.defineProperty()</b> method can be used to:</p>
+
+        <li>Adding a new property to an object</li>
+        <li>Changing properties values</li>
+        <li>changing Property metadata</li>
+        <li>Changing Object getters and setters</li>
+
+        <p>
+            <b>This example adds a year property to an object.</b>
+        </p>
+
+        <p id="demo"></p>
+
+        <script>
+            const person = {
+                firstName: "John",
+                lastName: "doe",
+                language: "EN"
+            };
+
+        Object.defineProperty(person, "year", {value:"2008"})
+
+        document.getElementById("demo").innerHTML = person.year;
+        </script>
+
+        <b>Changing a property value</b>
+
+        <p id="change"></p>
+
+        <script>
+            Object.defineProperty(person, "language", {value : "NO"});
+
+            document.getElementById("change").innerHTML = person.language;
+        </script>
+    </body>
+</html>

@@ -46,5 +46,63 @@
 
             document.getElementById("from").innerHTML = myObj;
         </script>
+
+        <p style="color: red">Oject.values()</p>
+        <p><b>Object.values()</b> is similar to the <b>Object.entries()</b>, out returns a single dimension array of the object values</p>
+        <p id="values"></p>
+
+        <script>
+            text = Object.values(person1);
+
+            document.getElementById("values").innerHTML = text;
+        </script>
+
+        <p style="color: red;">Object.groupBy()</p>
+
+        
+            <li>This method groups the elements of an object according to to string values returned from a callback function</li>
+            <li>This method doesn't change the original object</li>
+        
+            <p id="demo"></p>
+
+            <script>
+            // Create an Array
+            const fruit = [
+              {name:"apples", quantity:300},
+              {name:"bananas", quantity:500},
+              {name:"oranges", quantity:200},
+              {name:"kiwi", quantity:150}
+            ];
+            
+            // Callback function to select low volumes 
+            function myCallback({ quantity }) {
+              return quantity > 200 ? "ok" : "low";
+            }
+            
+            // Group by ok and low
+            const result = Object.groupBy(fruit, myCallback);
+            
+            // Display Results
+            let txt ="These fruits are Ok: <br>";
+            for (let [x,y] of result.ok.entries()) {
+              txt += y.name + " " + y.quantity + "<br>";
+            }
+            
+            txt += "<br>These fruits are low: <br>";
+            for (let [x,y] of result.low.entries()) {
+              txt += y.name + " " + y.quantity + "<br>";
+            }
+            
+            document.getElementById("demo").innerHTML = txt;
+            </script>
+
+            <p style="color: red;">Object.keys()</p>
+            <li>This method returns an array with the keys of an object</li>
+            <p id="keys"></p>
+            <script>
+                z = Object.keys(person1);
+
+                document.getElementById("keys").innerHTML = z;
+            </script>
     </body>
 </html>
